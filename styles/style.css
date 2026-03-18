@@ -2,4 +2,143 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.rec {
+  position: absolute;
+  top: var(--decorated-zone-margin);
+  right: calc(var(--decorated-zone-margin) + 9px);
+  color: var(--text-highlight);
+}
+
+.rec::after {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-left: 10px;
+  border-radius: 50%;
+  background-color: var(--text-highlight);
+  filter: blur(1px);
+}
+.header__theme-menu {
+  grid-row: 1;
+  justify-self: end;
+}
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.header__theme-menu-button {
+  color: var(--button-color);
+  background-color: transparent;
+  text-transform: lowercase;
+  border: none;
+  width: 70px;
+  height: 25px;
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid color-mix(in srgb, var(--button-color), transparent 40%);
+}
+.header__theme-menu-button:focus {
+  border-bottom: 1px solid var(--button-color);
+}
+.header__theme-menu-button_active {
+  border: 1px solid var(--button-color);
+  pointer-events: none;
+}
+.a {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--text-highlight);
+}
+.a:hover {
+  text-decoration: underline;
+}
+.a:focus {
+  border: 2px solid var(--p-color);
+}
+
+.decorated-zone {
+  display: grid;
+  align-items: center;
+  grid-template-rows: repeat(3, 1fr);
+  height: 100vh;
+  padding: var(--decorated-zone-margin);
+  position: relative;
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  top: var(--decorated-zone-margin);
+  right: var(--decorated-zone-margin);
+  width: 25px;
+  height: 25px;
+  border-top: 1px solid var(--button-color);
+  border-right: 1px solid var(--button-color);
+}
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  bottom: var(--decorated-zone-margin);
+  left: var(--decorated-zone-margin);
+  width: 25px;
+  height: 25px;
+  border-bottom: 1px solid var(--button-color);
+  border-left: 1px solid var(--button-color);
+}
+
+.h1 {
+  grid-row: 2;
+  font-weight: 700;
+  color: var(--h1-color);
+  text-shadow: 4px 4px 0 var(--text-highlight);
+  font-size: var(--h1-font-size);
+  line-height: 83%;
+}
+.h2-description {
+  grid-row: 3;
+}
+
+.main {
+  padding: var(--main-vertical-padding) var(--decorated-zone-margin);
+}
+.question-block {
+  margin-bottom: var(--block-margin-bottom);
+}
+
+.h2-plain {
+  color: var(--h2-plain-color);
+  margin-bottom: var(--h2-plain-margin-bottom);
+}
+.h2-highlight,
+.h3-highlight {
+  background-color: var(--text-highlight);
+  color: var(--highlighted-font-color);
+  margin-bottom: var(--h2-highlight-margin-bottom);
+}
+.h3-highlight {
+  font-weight: normal;
+}
+.p {
+  color: var(--p-color);
+  margin-bottom: var(--p-margin-bottom);
+}
+
+.h2-mega {
+  margin-bottom: var(--h2-plain-margin-bottom);
+}
+.images {
+  width: 100%;
+  height: auto;
+  margin-bottom: var(--decorated-zone-margin);
+}
+footer .h1 {
+  justify-self: center;
+  text-shadow: 2px 2px 0 var(--text-highlight);
 }

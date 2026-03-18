@@ -2,3 +2,100 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+:root {
+  --h1-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --h2-font-size: 18px;
+  --h2-plain-margin-bottom: 20px;
+  --h2-highlight-margin-bottom: 10px;
+  --p-margin-bottom: 20px;
+  --block-margin-bottom: 30px;
+
+  --decorated-zone-margin: 10px;
+  --main-vertical-padding: 40px;
+
+  --image-size: 315px;
+}
+@media (width >= 1024px) {
+  .question-block:nth-child(2) .text {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: var(--decorated-zone-margin);
+  }
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+}
+@media (width >= 768px) {
+  :root {
+    --h1-font-size:clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) ;
+    --decorated-zone-margin: 20px;
+    --main-vertical-padding: 60px;
+
+    --block-margin-bottom: 60px;
+  }
+  .decorated-zone {
+    grid-template-columns: 1fr 1fr;
+  }
+  .h1,
+  .header__theme-menu {
+    grid-column: 1/-1;
+  }
+  .h2-description {
+    grid-column: 2;
+  }
+  .question-block {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    column-gap: var(--decorated-zone-margin);
+  }
+  .h2-plain {
+    grid-column: 1;
+  }
+  .question-block:nth-child(2) .text {
+    grid-column: 1/-1;
+  }
+  .text {
+    grid-column: 2;
+  }
+  .image-block h2 {
+    margin-bottom: var(--decorated-zone-margin);
+  }
+  .images-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .images-grid {
+    display: grid;
+    align-items: stretch;
+    gap: var(--decorated-zone-margin);
+    grid-template-columns: auto var(--image-size) auto;
+    grid-template-rows: auto var(--image-size) auto;
+  }
+  .images-grid img:nth-child(1) {
+    grid-row: 1;
+    grid-column: 1/ 3;
+  }
+  .images-grid img:nth-child(2) {
+    grid-row: 1/3;
+    grid-column: 3;
+  }
+  .images-grid img:nth-child(3) {
+    grid-row: 2/4;
+    grid-column: 1;
+  }
+  .images-grid img:nth-child(4) {
+    grid-row: 2;
+    grid-column: 2;
+    width: var(--image-size);
+    height: var(--image-size);
+  }
+  .images-grid img:nth-child(5) {
+    grid-row: 3;
+    grid-column: 2/4;
+  }
+}

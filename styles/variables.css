@@ -3,6 +3,15 @@
   и их переопределение под различные устройства
 */
 :root {
+  --text-highlight: #ff0070;
+  --p-color: #f1b2ce;
+  --h1-color: #db00ff;
+  --highlighted-font-color: #000028;
+  --h2-plain-color: #ff0070;
+  --background: #000028;
+  --button-color: #ff0070;
+  --background-image: url("../images/cover-image-dark.png");
+
   --h1-font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   --h2-font-size: 18px;
   --h2-plain-margin-bottom: 20px;
@@ -31,7 +40,7 @@
 }
 @media (width >= 768px) {
   :root {
-    --h1-font-size:clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) ;
+    --h1-font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     --decorated-zone-margin: 20px;
     --main-vertical-padding: 60px;
 

@@ -129,6 +129,7 @@
 .p {
   color: var(--p-color);
   margin-bottom: var(--p-margin-bottom);
+  line-height: 23.4px;
 }
 
 .h2-mega {
